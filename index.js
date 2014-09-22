@@ -1,18 +1,16 @@
 var execute = require('./execute');
-var Q = require('q');
+var get = require('./get');
+var delay = require('./delay');
 
-function delay(ms) {
-    var deferred = Q.defer();
-    var response = 'finally!';
-    setTimeout(deferred.resolve.bind(deferred, response), ms);
-    return deferred.promise;
-}
 
-execute(function *() {
-    var response = yield delay(2000);
-    console.log('delay is over!', response);
-    yield delay(4000);
-    console.log('delay #2 is over!');
-});
+var main = function *() {
+    yield delay(2000);
+    console.log('delay is over!');
+    var response = yield get('https://google.com');
+    console.log('Response received!', response[0].statusCode);
+    console.log('Response length:', response[0].body.length);
+};
+
+execute(main());
 
 
