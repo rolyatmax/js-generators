@@ -15,12 +15,10 @@ var execute = (flow, resp) => {
 
 // the main function, written as a generator to make use of yield
 var main = function *() {
-    var wait = 2000;
-    yield delay(wait);
-    console.log(`${wait}ms delay is over!`);
-    var url = 'https://google.com';
-    var response = yield get(url);
-    console.log(`Response received from ${url} with status: ${response.statusCode}`);
+    yield delay(2000);
+    console.log('2000ms delay is over!');
+    var response = yield get('https://google.com');
+    console.log(`Response received from https://google.com with status: ${response.statusCode}`);
 };
 
 execute(main());
