@@ -1,15 +1,11 @@
 {
   "name": "js-generators",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Trying out some coroutine-style experiments with generators",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "author": "Taylor Baldwin <taylorbaldwin@gmail.com> (https://tbaldw.in)",
   "license": "ISC",
   "dependencies": {
-    "request": "*",
-    "q": "*"
+    "request": "*"
   }
 }
