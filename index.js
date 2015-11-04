@@ -1,7 +1,7 @@
 var request = require('request');
 
 // Create some async functions that'll return promises
-var delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+var delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 var get = url => new Promise((resolve, reject) => {
     request(url, (err, response) => err ? reject(err) : resolve(response));
 });
